@@ -1,0 +1,580 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Atin Lokhande | Portfolio</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #080b12;
+    color: #fff;
+    line-height: 1.7;
+}
+
+:root {
+    --accent: #00d4ff;
+    --muted: #9ca9bb;
+    --card: #111827;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 9%;
+    background: rgba(8,11,18,.96);
+    border-bottom: 1px solid #202b3b;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: var(--accent);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: var(--accent);
+}
+
+.hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    padding: 80px 10%;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.tag {
+    color: var(--accent);
+    letter-spacing: 4px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 7vw, 78px);
+    line-height: 1.2;
+    margin: 20px 0;
+}
+
+.hero h1 span {
+    color: var(--accent);
+}
+
+.hero h2 {
+    font-size: 25px;
+    color: var(--muted);
+    font-weight: 400;
+}
+
+.hero p {
+    color: var(--muted);
+    max-width: 650px;
+    margin: 25px 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    border-radius: 5px;
+    text-decoration: none;
+    margin: 5px;
+    transition: .3s;
+}
+
+.btn.primary {
+    background: var(--accent);
+    color: #080b12;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: white;
+    color: #080b12;
+    transform: translateY(-3px);
+}
+
+section {
+    padding: 85px 10%;
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.heading h2 {
+    font-size: 35px;
+}
+
+.heading span {
+    color: var(--accent);
+}
+
+.heading p {
+    color: var(--muted);
+}
+
+.about {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+    color: var(--muted);
+    font-size: 17px;
+}
+
+.education-grid,
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 22px;
+}
+
+.card {
+    background: var(--card);
+    border: 1px solid #253247;
+    padding: 27px;
+    border-radius: 10px;
+    transition: .3s;
+}
+
+.card:hover {
+    border-color: var(--accent);
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    color: var(--accent);
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: var(--muted);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
+}
+
+.skill {
+    background: var(--card);
+    border: 1px solid #253247;
+    padding: 17px;
+    text-align: center;
+    border-radius: 7px;
+    transition: .3s;
+}
+
+.skill:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+}
+
+.level {
+    display: block;
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 5px;
+}
+
+.project-number {
+    font-size: 13px;
+    color: var(--accent);
+}
+
+.tech {
+    margin-top: 15px;
+    font-size: 13px;
+    color: var(--accent);
+}
+
+.contact {
+    text-align: center;
+}
+
+.contact p {
+    color: var(--muted);
+    margin: 15px 0;
+}
+
+footer {
+    background: #05070c;
+    border-top: 1px solid #202b3b;
+    text-align: center;
+    padding: 25px;
+    color: #758398;
+}
+
+footer span {
+    color: var(--accent);
+}
+
+@media(max-width: 700px) {
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    section {
+        padding: 65px 7%;
+    }
+
+    .hero {
+        min-height: 75vh;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+    <div class="logo">AL.</div>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- HOME -->
+<div class="hero" id="home">
+    <div class="hero-content">
+
+        <div class="tag">DATA SCIENCE & STATISTICS</div>
+
+        <h1>
+            Hi, I'm <span>Atin Lokhande.</span>
+        </h1>
+
+        <h2>Student | Aspiring Data Professional</h2>
+
+        <p>
+            A second-year BSc Data Science and Statistics student
+            interested in programming, analytical thinking,
+            statistical concepts and exploring the possibilities
+            of data-driven technology.
+        </p>
+
+        <a href="#projects" class="btn primary">
+            Explore My Work
+        </a>
+
+        <a href="#about" class="btn">
+            About Me
+        </a>
+
+    </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+
+    <div class="heading">
+        <h2>About <span>Me</span></h2>
+        <p>Getting to know me</p>
+    </div>
+
+    <div class="about">
+
+        <p>
+            I'm Atin Lokhande, currently pursuing my second year
+            of BSc in Data Science and Statistics at CHRIST University.
+        </p>
+
+        <br>
+
+        <p>
+            My academic journey began with PCMB (Physics, Chemistry,
+            Mathematics and Biology) in my 11th and 12th grades.
+            This background helped me develop an interest in
+            mathematics, analytical thinking and scientific concepts.
+        </p>
+
+        <br>
+
+        <p>
+            Currently, I'm exploring programming and data analysis
+            through Python, R, SQL and Microsoft Excel.
+            I also have a basic understanding of Java and
+            object-oriented programming.
+        </p>
+
+        <br>
+
+        <p>
+            I'm interested in continuously learning new technologies,
+            working with datasets and developing practical skills
+            that can help me grow in the field of Data Science.
+        </p>
+
+    </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+
+    <div class="heading">
+        <h2>My <span>Education</span></h2>
+        <p>My academic journey</p>
+    </div>
+
+    <div class="education-grid">
+
+        <div class="card">
+            <h3>Higher Secondary Education</h3>
+            <p>Class 11 & 12</p>
+            <p>Stream: PCMB</p>
+            <p>Physics | Chemistry | Mathematics | Biology</p>
+        </div>
+
+        <div class="card">
+            <h3>CHRIST University</h3>
+            <p>Bachelor of Science</p>
+            <p>Data Science and Statistics</p>
+            <p>Currently in Second Year</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+
+    <div class="heading">
+        <h2>Technical <span>Skills</span></h2>
+        <p>Tools and technologies I'm familiar with</p>
+    </div>
+
+    <div class="skills-grid">
+
+        <div class="skill">
+            Python
+            <span class="level">Familiar</span>
+        </div>
+
+        <div class="skill">
+            R Programming
+            <span class="level">Familiar</span>
+        </div>
+
+        <div class="skill">
+            SQL
+            <span class="level">Familiar</span>
+        </div>
+
+        <div class="skill">
+            Microsoft Excel
+            <span class="level">Familiar</span>
+        </div>
+
+        <div class="skill">
+            Java
+            <span class="level">Basics</span>
+        </div>
+
+        <div class="skill">
+            Statistics
+            <span class="level">Academic Knowledge</span>
+        </div>
+
+        <div class="skill">
+            Data Analysis
+            <span class="level">Learning</span>
+        </div>
+
+        <div class="skill">
+            DBMS
+            <span class="level">Academic Knowledge</span>
+        </div>
+
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+
+    <div class="heading">
+        <h2>My <span>Projects</span></h2>
+        <p>Academic projects and ideas</p>
+    </div>
+
+    <div class="project-grid">
+
+        <div class="card">
+            <div class="project-number">01 / DATA ANALYSIS</div>
+
+            <h3>Academic Supermarket Sales Analysis</h3>
+
+            <p>
+                An exploratory data analysis project involving
+                supermarket transaction data, descriptive statistics,
+                sales distributions, customer patterns and
+                statistical interpretation.
+            </p>
+
+            <div class="tech">
+                Statistics · Data Analysis · Visualisation
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="project-number">02 / AI PROJECT IDEA</div>
+
+            <h3>AI Data Analyst Bot</h3>
+
+            <p>
+                A proposed AI-powered assistant that can analyse
+                CSV, Excel and JSON files, identify missing values,
+                detect outliers, generate visualisations and
+                produce automated analytical reports.
+            </p>
+
+            <div class="tech">
+                Python · Pandas · NumPy · Scikit-learn
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="project-number">03 / JAVA</div>
+
+            <h3>TripCraft</h3>
+
+            <p>
+                A Java application developed as part of programming
+                coursework, demonstrating object-oriented concepts,
+                classes, constructors, methods, inheritance
+                and arrays.
+            </p>
+
+            <div class="tech">
+                Java · OOP · Programming
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="project-number">04 / STATISTICS</div>
+
+            <h3>Statistical Estimation in R</h3>
+
+            <p>
+                Academic work involving statistical estimation,
+                Maximum Likelihood Estimation, Method of Moments,
+                sampling distributions and statistical simulations.
+            </p>
+
+            <div class="tech">
+                R Programming · Statistics
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- INTERESTS -->
+<section>
+
+    <div class="heading">
+        <h2>Areas of <span>Interest</span></h2>
+        <p>What I want to explore</p>
+    </div>
+
+    <div class="card">
+        <p>• Data Science and Analytics</p>
+        <p>• Artificial Intelligence and Machine Learning</p>
+        <p>• Statistical Modelling</p>
+        <p>• Programming and Software Development</p>
+        <p>• Data Visualisation</p>
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+
+    <div class="heading">
+        <h2>Let's <span>Connect</span></h2>
+        <p>Find me online</p>
+    </div>
+
+    <div class="contact">
+
+        <p>
+            Interested in technology, data and new opportunities?
+            Let's connect!
+        </p>
+
+        <a
+            href="https://www.instagram.com/atinlokhande_/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn primary">
+            Instagram ↗
+        </a>
+
+        <!-- Add your email when ready -->
+        <a href="mailto:YOUR_EMAIL@gmail.com" class="btn">
+            Email Me
+        </a>
+
+        <!-- Add your GitHub and LinkedIn URLs when ready -->
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+    <p>© 2026 <span>Atin Lokhande</span></p>
+
+    <p>Analyzing Today, Predicting Tomorrow.</p>
+
+</footer>
+
+</body>
+</html>
